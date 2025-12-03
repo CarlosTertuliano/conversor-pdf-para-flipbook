@@ -1,0 +1,160 @@
+/* ============================
+   RESET & BASE
+============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #1e293b);
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Root container */
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ============================
+   MAIN CONTAINER
+============================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* Título */
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #f8fafc;
+}
+
+/* Upload */
+.container input[type="file"] {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: #334155;
+  border: 2px solid #475569;
+  color: #f1f5f9;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: 0.3s;
+}
+
+.container input[type="file"]:hover {
+  background: #475569;
+}
+
+/* ============================
+   FLIPBOOK CONTAINER
+============================ */
+.flipbook-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 95vw;
+  max-height: 85vh;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  
+  padding: 20px;
+
+  /* Sombra suave */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================
+   PAGE STYLE (PDF IMAGES)
+============================ */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Mantém proporção da revista */
+  width: 100%;
+  height: 100%;
+}
+
+.page img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain; /* Não distorce */
+  border-radius: 12px;
+
+  /* Sombra leve nas páginas */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================
+   RESPONSIVIDADE
+============================ */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .flipbook-container {
+    padding: 15px;
+  }
+
+  .page img {
+    max-height: 75vh;
+  }
+}
+
+/* SMARTPHONES */
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .container h1 {
+    font-size: 1.4rem;
+  }
+
+  .container input[type="file"] {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .flipbook-container {
+    max-height: 75vh;
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .page img {
+    max-height: 70vh;
+  }
+}
+
+/* SUPER SMALL (celulares antigos) */
+@media (max-width: 380px) {
+  .container h1 {
+    font-size: 1.2rem;
+  }
+
+  .page img {
+    max-height: 65vh;
+  }
+}
