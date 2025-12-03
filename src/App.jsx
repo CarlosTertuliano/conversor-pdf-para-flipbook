@@ -60,6 +60,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1> Vocacional Shalom </h1>
       {images.length === 0 && <p>Carregando revista...</p>}
 
       {images.length > 0 && (
